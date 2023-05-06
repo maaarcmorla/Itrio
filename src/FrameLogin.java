@@ -14,6 +14,9 @@ import javax.swing.JTextField;
 public class FrameLogin extends JFrame implements MouseListener {
     
   private JLabel DownBoton;
+  private ImageIcon DownBotonBG;
+  private ImageIcon DownBotonBGI;
+  
   public FrameLogin() {
 
         ImageIcon LogoItrioPq = new ImageIcon("images/logo1.png");
@@ -73,7 +76,8 @@ public class FrameLogin extends JFrame implements MouseListener {
 
           /// Boton
         this.DownBoton = new JLabel();
-        ImageIcon DownBotonBG = new ImageIcon("images/iniciar-sesion-boton.png");
+        this.DownBotonBG = new ImageIcon("images/iniciar-sesion-boton.png");
+        this.DownBotonBGI = new ImageIcon("images/iniciar-sesion-boton2.png");
         this.DownBoton.setIcon(DownBotonBG);
         this.DownBoton.addMouseListener(this);
         this.DownBoton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -124,9 +128,19 @@ public class FrameLogin extends JFrame implements MouseListener {
 
     @Override
     public void mouseEntered(MouseEvent e) {
+      if (e.getSource()==this.DownBoton){
+        this.DownBoton.setIcon(this.DownBotonBGI);
+        // No es necesario, pero para tener en cuenta de cara a futuro.
+        this.repaint();
+      }
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
+      if (e.getSource()==this.DownBoton){
+        this.DownBoton.setIcon(this.DownBotonBG);
+        // No es necesario, pero para tener en cuenta de cara a futuro.
+        this.repaint();
+      }
     }
 }
