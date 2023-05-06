@@ -69,7 +69,7 @@ public class FrameLogin extends JFrame implements MouseListener {
         DownContraseñaPF.setBackground(new Color(0, 0, 0,0));
         DownUsuarioTF.setFont(new Font("Monstserrat",Font.BOLD,12));
         DownContraseñaPF.setBorder(null);
-        DownContraseñaPF.setOpaque(true);        
+        DownContraseñaPF.setOpaque(false);        
 
           /// Boton
         this.DownBoton = new JLabel();
