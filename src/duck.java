@@ -16,7 +16,7 @@ public class duck extends JFrame {
         this.setSize(400,400);
         this.setResizable(false);
         this.setLocation(750, 390);
-        this.setTitle("Troleado :)");
+        this.setTitle("Wallkie Duckie :)");
         this.setIconImage(LogoItrioPq.getImage());
 
         // Panel
