@@ -114,7 +114,7 @@ public class FrameLogin extends JFrame implements MouseListener {
     public void mouseClicked(MouseEvent e) {
       if (e.getSource()==this.DownBoton){
         this.dispose();
-        new FrameRegistro();
+        new Itrio();
       }
     }
 

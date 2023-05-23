@@ -9,7 +9,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-import com.mysql.cj.x.protobuf.MysqlxNotice.Frame;
 
 public class Itrio extends JFrame implements MouseListener {
   
