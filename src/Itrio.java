@@ -2,12 +2,16 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.jar.JarEntry;
 import java.awt.Cursor;
+import java.awt.Dimension;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 
 public class Itrio extends JFrame implements MouseListener {
@@ -23,6 +27,7 @@ public class Itrio extends JFrame implements MouseListener {
   private ImageIcon SettingsBotonI2;
   private JLabel sobreItrio;
   private ImageIcon sobreItrio1;
+  
 
   public Itrio() {
 
@@ -72,6 +77,20 @@ public class Itrio extends JFrame implements MouseListener {
         this.SettingsBoton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         this.SettingsBoton.setBounds(1100,26,55,63);
 
+        // Panel - Scroll Pane
+        JPanel Libros = new JPanel();
+        Libros.setPreferredSize(new Dimension(1100,590));
+        Libros.setBackground(new Color(0,0,0,0));
+        Libros.setOpaque(true);
+
+        JScrollPane scrollPane = new JScrollPane(Libros, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+            JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        scrollPane.setBounds(30,143,1120,590);
+        scrollPane.setPreferredSize(new Dimension(1120,580));
+        scrollPane.setBackground(new Color(0,0,0,0));
+        scrollPane.setBorder(null);
+        scrollPane.setOpaque(true);
+
         // Boton Sobre Itrio
         this.sobreItrio = new JLabel();
         this.sobreItrio1 = new ImageIcon("images/BP.bga.png");
@@ -81,6 +100,7 @@ public class Itrio extends JFrame implements MouseListener {
         this.sobreItrio.setBounds(-10,775,1205,30);
 
         // Add
+        this.add(scrollPane);
         this.add(LogoutBoton);
         this.add(UsuarioBoton);
         this.add(SettingsBoton);

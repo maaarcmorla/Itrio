@@ -26,7 +26,7 @@ public class FrameRegistro extends JFrame implements MouseListener{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(null);
         this.setSize(600,700);
-        this.setResizable(true);
+        this.setResizable(false);
         this.setLocation(725, 125);
         this.setTitle("Itrio - Registro");
         this.setIconImage(LogoItrioPq.getImage());

@@ -18,7 +18,7 @@ public class ConexionDB {
                 System.out.println("No se a detectado ningun driver" + exc);
             }
 
-            ConexionDB.conex = DriverManager.getConnection("jdbc:mysql://192.168.56.2:3306", "marc", "MarcNazi18.");
+            ConexionDB.conex = DriverManager.getConnection("jdbc:mysql://192.168.56.2:3306/Itrio", "marc", "MarcNazi18.");
             } catch (java.sql.SQLException sqle) {
                 System.out.println("Error: " + sqle); 
                 JOptionPane.showMessageDialog(null, "No se a podido establecer conexión con la base de datos.","Connection error", JOptionPane.ERROR_MESSAGE);
