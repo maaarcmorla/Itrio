@@ -2,7 +2,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.text.Normalizer;
 import java.awt.Cursor;
 
 import javax.swing.ImageIcon;
@@ -12,7 +11,9 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class FrameRegistro extends JFrame implements MouseListener{
+import com.mysql.cj.x.protobuf.MysqlxNotice.Frame;
+
+public class FrameRegistro extends JFrame implements MouseListener {
     
     private JLabel RegisterBoton;
     private ImageIcon RegisterBotonI; 
@@ -27,7 +28,7 @@ public class FrameRegistro extends JFrame implements MouseListener{
         this.setLayout(null);
         this.setSize(600,700);
         this.setResizable(false);
-        this.setLocation(725, 125);
+        this.setLocation(700, 100);
         this.setTitle("Itrio - Registro");
         this.setIconImage(LogoItrioPq.getImage());
 
@@ -93,6 +94,10 @@ public class FrameRegistro extends JFrame implements MouseListener{
 
     @Override
     public void mouseClicked(MouseEvent e) {
+        if (e.getSource()==this.RegisterBoton){
+            this.dispose();
+            new FrameLogin();
+          }
     }
 
     @Override
