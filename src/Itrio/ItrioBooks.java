@@ -1,3 +1,5 @@
+package Itrio;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseEvent;
@@ -14,7 +16,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 
-public class Itrio extends JFrame implements MouseListener {
+public class ItrioBooks extends JFrame implements MouseListener {
   
   private JLabel LogoutBoton;
   private ImageIcon LogoutBotonI;
@@ -29,7 +31,7 @@ public class Itrio extends JFrame implements MouseListener {
   private ImageIcon sobreItrio1;
   
 
-  public Itrio() {
+  public ItrioBooks() {
 
         ImageIcon LogoItrioPq = new ImageIcon("images/logo1.png");
         

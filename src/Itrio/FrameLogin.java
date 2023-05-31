@@ -1,3 +1,5 @@
+package Itrio;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseEvent;
@@ -114,7 +116,7 @@ public class FrameLogin extends JFrame implements MouseListener {
     public void mouseClicked(MouseEvent e) {
       if (e.getSource()==this.DownBoton){
         this.dispose();
-        new Itrio();
+        new ItrioBooks();
       }
     }
 

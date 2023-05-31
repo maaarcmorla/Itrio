@@ -1,9 +1,10 @@
+package bd;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
-import bd.ConexionDB;
 
-//public class RegistroQ {
+public class Querys {
 //    public void Usuarios() {
    //     String pass=String.valueOf(txtPass.getPassword());
      //   String SQL="Insert into usuarios (usuario,pass) values(?,?)";
@@ -22,4 +23,4 @@ import bd.ConexionDB;
         //}
   //
     //  }
-//}
+}

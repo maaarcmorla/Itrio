@@ -1,11 +1,12 @@
-import java.sql.Connection;
+package Itrio;
+
 import bd.ConexionDB;
 
 public class App {
 
     public static void main(String[] args) throws Exception {
         // ConexionDB con = new ConexionDB();
-        new FrameRegistro();
+        new FrameLogin();
     }
 }
  
