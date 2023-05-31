@@ -1,17 +1,14 @@
 package Itrio;
 
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.jar.JarEntry;
 import java.awt.Cursor;
 import java.awt.Dimension;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
@@ -36,7 +33,7 @@ public class ItrioBooks extends JFrame implements MouseListener {
         ImageIcon LogoItrioPq = new ImageIcon("images/logo1.png");
         
 
-        // Frame
+        // ------------ Frame ------------
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(null);
         this.setSize(1205,840);
@@ -45,14 +42,14 @@ public class ItrioBooks extends JFrame implements MouseListener {
         this.setTitle("Itrio");
         this.setIconImage(LogoItrioPq.getImage());
 
-        // Label
+        // ------------ Label ------------ 
         ImageIcon LprincipalIcon = new ImageIcon("images/BPrincipal.png");
        
         JLabel Lprincipal = new JLabel();
         Lprincipal.setIcon(LprincipalIcon);
         Lprincipal.setBounds(-10,0,1200,803);
 
-        // Boton Logout
+        // ------------ Boton Logout ------------
         this.LogoutBoton = new JLabel();
         this.LogoutBotonI = new ImageIcon("images/logout.png");
         this.LogoutBotonI2 = new ImageIcon("images/logout.gif");
@@ -61,7 +58,7 @@ public class ItrioBooks extends JFrame implements MouseListener {
         this.LogoutBoton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         this.LogoutBoton.setBounds(50,30,50,50);
 
-        // Boton Usuario
+        // ------------ Boton Usuario ------------
         this.UsuarioBoton = new JLabel();
         this.UsuarioBotonI = new ImageIcon("images/Icono-Usuario-Azul.png");
         this.UsuarioBotonI2 = new ImageIcon("images/Icono-Usuario-Blanco.png");
@@ -70,7 +67,7 @@ public class ItrioBooks extends JFrame implements MouseListener {
         this.UsuarioBoton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         this.UsuarioBoton.setBounds(1025,30,55,63);
 
-        // Boton Settings
+        // ------------ Boton Settings ------------
         this.SettingsBoton = new JLabel();
         this.SettingsBotonI = new ImageIcon("images/Icono-Settings-A.png");
         this.SettingsBotonI2 = new ImageIcon("images/Icono-Settings-B.png");
@@ -79,7 +76,7 @@ public class ItrioBooks extends JFrame implements MouseListener {
         this.SettingsBoton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         this.SettingsBoton.setBounds(1100,26,55,63);
 
-        // Panel - Scroll Pane
+        // ------------ Panel - Scroll Pane ------------
         JPanel Libros = new JPanel();
         Libros.setPreferredSize(new Dimension(1100,590));
         Libros.setBackground(new Color(0,0,0,0));
@@ -93,7 +90,7 @@ public class ItrioBooks extends JFrame implements MouseListener {
         scrollPane.setBorder(null);
         scrollPane.setOpaque(true);
 
-        // Boton Sobre Itrio
+        // ------------ Boton Sobre Itrio ------------
         this.sobreItrio = new JLabel();
         this.sobreItrio1 = new ImageIcon("images/BP.bga.png");
         this.sobreItrio.setIcon(sobreItrio1);
@@ -101,7 +98,7 @@ public class ItrioBooks extends JFrame implements MouseListener {
         this.sobreItrio.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         this.sobreItrio.setBounds(-10,775,1205,30);
 
-        // Add
+        // ------------ Add ------------
         this.add(scrollPane);
         this.add(LogoutBoton);
         this.add(UsuarioBoton);

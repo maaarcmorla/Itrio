@@ -14,7 +14,9 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class FrameLogin extends JFrame implements MouseListener {
-    
+  
+  private JTextField DownUsuarioTF;
+  private JPasswordField DownContraseñaPF;
   private JLabel DownBoton;
   private ImageIcon DownBotonBG;
   private ImageIcon DownBotonBGI;
@@ -24,7 +26,7 @@ public class FrameLogin extends JFrame implements MouseListener {
         ImageIcon LogoItrioPq = new ImageIcon("images/logo1.png");
         
 
-        // Frame
+        // ------------ Frame ------------
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(null);
         this.setSize(500,700);
@@ -34,7 +36,7 @@ public class FrameLogin extends JFrame implements MouseListener {
         this.setIconImage(LogoItrioPq.getImage());
         
 
-        // Logo Login
+        // ------------ Logo Login ------------
         ImageIcon LogoItrio = new ImageIcon("images/logo2.png");
 
         JLabel LogoUp = new JLabel();
@@ -45,38 +47,38 @@ public class FrameLogin extends JFrame implements MouseListener {
         Up.setBounds(0,0,500,150);
         Up.setBackground(Color.WHITE);
         
-        // Usuario, Contraseña, Boton
+        // ------------ Usuario, Contraseña, Boton ------------
         JPanel Down = new JPanel();
         Down.setBounds(-10, 150, 500, 350);
         Down.setBackground(Color.WHITE);
 
-          /// Usuario
+          /// ------------ Usuario ------------
         JLabel DownUsuario = new JLabel();
         ImageIcon DownUsuarioBG = new ImageIcon("images/Nombre.png");
         DownUsuario.setBounds(200,200,334, 58);
         DownUsuario.setIcon(DownUsuarioBG);
 
-        JTextField DownUsuarioTF = new JTextField();
-        DownUsuarioTF.setBounds(20,47,305,20);
-        DownUsuarioTF.setBackground(new Color(0, 0, 0,0));
-        DownUsuarioTF.setFont(new Font("Monstserrat",Font.BOLD,12));
-        DownUsuarioTF.setBorder(null);
-        DownUsuarioTF.setOpaque(false);
+        this.DownUsuarioTF = new JTextField();
+        this.DownUsuarioTF.setBounds(20,47,305,20);
+        this.DownUsuarioTF.setBackground(new Color(0, 0, 0,0));
+        this.DownUsuarioTF.setFont(new Font("Monstserrat",Font.BOLD,12));
+        this.DownUsuarioTF.setBorder(null);
+        this.DownUsuarioTF.setOpaque(false);
 
-          /// Contraseña
+          /// ------------ Contraseña ------------
         JLabel DownContraseña = new JLabel();
         ImageIcon DownContraseñaBG = new ImageIcon("images/Contraseña.png");
         DownContraseña.setBounds(0,0,330, 41);
         DownContraseña.setIcon(DownContraseñaBG);
 
-        JPasswordField DownContraseñaPF = new JPasswordField();
-        DownContraseñaPF.setBounds(20,43,300,20);
-        DownContraseñaPF.setBackground(new Color(0, 0, 0,0));
-        DownContraseñaPF.setFont(new Font("Monstserrat",Font.BOLD,12));
-        DownContraseñaPF.setBorder(null);
-        DownContraseñaPF.setOpaque(false);        
+        this.DownContraseñaPF = new JPasswordField();
+        this.DownContraseñaPF.setBounds(20,43,300,20);
+        this.DownContraseñaPF.setBackground(new Color(0, 0, 0,0));
+        this.DownContraseñaPF.setFont(new Font("Monstserrat",Font.BOLD,12));
+        this.DownContraseñaPF.setBorder(null);
+        this.DownContraseñaPF.setOpaque(false);        
 
-          /// Boton
+          /// ------------ Boton ------------
         this.DownBoton = new JLabel();
         this.DownBotonBG = new ImageIcon("images/iniciar-sesion-boton.png");
         this.DownBotonBGI = new ImageIcon("images/iniciar-sesion-boton2.png");
@@ -84,7 +86,7 @@ public class FrameLogin extends JFrame implements MouseListener {
         this.DownBoton.addMouseListener(this);
         this.DownBoton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
-        // Fondo Olas
+        // ------------ Fondo Olas ------------
         JPanel BGO = new JPanel();
         BGO.setBounds(0,465,500,200);
         BGO.setBackground(Color.WHITE);
@@ -94,7 +96,7 @@ public class FrameLogin extends JFrame implements MouseListener {
         FondoOlas.setBounds(0,0,500,700);
         FondoOlas.setIcon(OlasBg);
 
-        // Add
+        // ------------ Add ------------
         this.add(Up);
         this.add(Down);
         this.add(BGO);
@@ -115,6 +117,7 @@ public class FrameLogin extends JFrame implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
       if (e.getSource()==this.DownBoton){
+        
         this.dispose();
         new ItrioBooks();
       }

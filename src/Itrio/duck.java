@@ -12,7 +12,7 @@ public class duck extends JFrame {
 
         ImageIcon LogoItrioPq = new ImageIcon("images/logo1.png");
 
-        // Frame
+        // ------------ Frame ------------ 
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLayout(null);
         this.setSize(400,400);
@@ -21,12 +21,12 @@ public class duck extends JFrame {
         this.setTitle("Wallkie Duckie :)");
         this.setIconImage(LogoItrioPq.getImage());
 
-        // Panel
+        // ------------ Panel ------------
         JPanel fondo = new JPanel();
         fondo.setBackground(Color.black);
         fondo.setBounds(0,0,400,400);
 
-        // Label
+        // ------------ Label ------------
         ImageIcon patito = new ImageIcon("images/patito.gif");
 
         JLabel Pato = new JLabel();
@@ -34,7 +34,7 @@ public class duck extends JFrame {
         Pato.setBounds(80,-20,400,400);
         Pato.setBackground(new Color(0, 0, 0, 0));
 
-        // Add
+        // ------------ Add ------------
         this.add(Pato);
         this.add(fondo);
         

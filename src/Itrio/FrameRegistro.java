@@ -9,11 +9,8 @@ import java.awt.Cursor;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-
-import com.mysql.cj.x.protobuf.MysqlxNotice.Frame;
 
 public class FrameRegistro extends JFrame implements MouseListener {
     
@@ -25,7 +22,7 @@ public class FrameRegistro extends JFrame implements MouseListener {
 
         ImageIcon LogoItrioPq = new ImageIcon("images/logo1.png");
 
-        // Frame
+        // ------------ Frame ------------
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(null);
         this.setSize(600,700);
@@ -34,15 +31,15 @@ public class FrameRegistro extends JFrame implements MouseListener {
         this.setTitle("Itrio - Registro");
         this.setIconImage(LogoItrioPq.getImage());
 
-        // Label Registro 
+        // ------------ Label Registro ------------
         ImageIcon LabelRegistroIcon = new ImageIcon("images/Register.png");
        
         JLabel LabelRegistro = new JLabel();
         LabelRegistro.setIcon(LabelRegistroIcon);
         LabelRegistro.setBounds(-10,0,600,700);
 
-        // TextField-PasswordField
-        /// Nombre
+        // ------------ TextField-PasswordField ------------
+        /// ------------ Nombre ------------
         JTextField NombreTF = new JTextField();
         NombreTF.setBounds(115,178,165,20);
         NombreTF.setBackground(new Color(0, 0, 0,0));
@@ -50,7 +47,7 @@ public class FrameRegistro extends JFrame implements MouseListener {
         NombreTF.setBorder(null);
         NombreTF.setOpaque(false);
 
-        /// Apellido
+        /// ------------ Apellido ------------
         JTextField ApellidoTF = new JTextField();
         ApellidoTF.setBounds(300,178,165,20);
         ApellidoTF.setBackground(new Color(0, 0, 0,0));
@@ -58,7 +55,7 @@ public class FrameRegistro extends JFrame implements MouseListener {
         ApellidoTF.setBorder(null);
         ApellidoTF.setOpaque(false);
 
-        /// Nombre de Usuario
+        /// ------------ Nombre de Usuario ------------
         JTextField UsuarioTF = new JTextField();
         UsuarioTF.setBounds(142,268,300,20);
         UsuarioTF.setBackground(new Color(0, 0, 0,0));
@@ -66,7 +63,7 @@ public class FrameRegistro extends JFrame implements MouseListener {
         UsuarioTF.setBorder(null);
         UsuarioTF.setOpaque(false);
 
-        /// Contraseña
+        /// ------------ Contraseña ------------
         JPasswordField ContraseñaPF = new JPasswordField();
         ContraseñaPF.setBounds(142,337,300,20);
         ContraseñaPF.setBackground(new Color(0, 0, 0,0));
@@ -74,7 +71,7 @@ public class FrameRegistro extends JFrame implements MouseListener {
         ContraseñaPF.setBorder(null);
         ContraseñaPF.setOpaque(false); 
 
-        /// Boton
+        /// ------------ Boton ------------
         this.RegisterBoton = new JLabel();
         this.RegisterBotonI = new ImageIcon("images/RegistrarNegro.png");
         this.RegisterBotonI2 = new ImageIcon("images/RegistrarBlanco.png");
@@ -83,7 +80,7 @@ public class FrameRegistro extends JFrame implements MouseListener {
         this.RegisterBoton.addMouseListener(this);
         this.RegisterBoton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
-        // Add
+        // ------------ Add ------------
         this.add(NombreTF);
         this.add(ApellidoTF);
         this.add(UsuarioTF);
