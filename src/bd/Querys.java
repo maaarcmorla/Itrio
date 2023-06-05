@@ -1,26 +1,53 @@
 package bd;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
-import javax.swing.JOptionPane;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Querys {
-//    public void Usuarios() {
-   //     String pass=String.valueOf(txtPass.getPassword());
-     //   String SQL="Insert into usuarios (usuario,pass) values(?,?)";
-  //
-    //    try {
-      //    PreparedStatement pst=con.PreparedStatement (SQL);
-  //
-    //      pst.setString(1, txtUsuario.getText());
-      //    pst.setString(2, pass);
-  //
-    //      pst.executeUpdate();
-      //    JOptionPane.showMessageDialog(null, "¡Inicio de sesión exitoso!");
-  //
-    //    } catch (Exception e) {
-      //    JOptionPane.showMessageDialog(null, "Error al iniciar sesion " + e.getMessage();
-        //}
-  //
-    //  }
+
+	public static boolean login (String usuario, String passwd) {
+		String query = "SELECT usuario, passwd FROM user WHERE usuario=? AND passwd=?";
+
+		try {
+			PreparedStatement stmt = ConexionDB.conex.prepareStatement(query);
+			stmt.setString(1, usuario);
+			stmt.setString(2, passwd);
+
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				if (rs.getString(1).equals(usuario) && rs.getString(2).equals(passwd))
+					return true;
+			}
+		} catch (SQLException sqle) {
+			// TODO: handle exception
+			System.out.println("Login error: " + sqle);
+		}
+
+		return false;
+	}
+
+	public static boolean insert (String nombre, String apellidos, String usuario, String passwd) {
+		String query = "INSERT INTO user (nombre, apellidos, usuario, passwd) VALUES (?, ?, ?, ?)";
+	
+		try {
+		  PreparedStatement stmt = ConexionDB.conex.prepareStatement(query);
+		  stmt.setString(1, nombre);
+		  stmt.setString(2, apellidos);
+		  stmt.setString(3, usuario);
+		  stmt.setString(4, passwd);
+	
+		  stmt.executeUpdate();
+	
+		  return true;
+	
+		} catch (SQLException sqle) {
+			System.out.println("ERROR: " + sqle);
+		}
+		return false;
+	}
+    
+
+
 }

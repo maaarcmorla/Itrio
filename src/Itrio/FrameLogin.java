@@ -9,9 +9,12 @@ import java.awt.Cursor;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+
+import bd.Querys;
 
 public class FrameLogin extends JFrame implements MouseListener {
   
@@ -20,6 +23,9 @@ public class FrameLogin extends JFrame implements MouseListener {
   private JLabel DownBoton;
   private ImageIcon DownBotonBG;
   private ImageIcon DownBotonBGI;
+  private JLabel Registrarte;
+  private ImageIcon RegistrarteNegro;
+  private ImageIcon RegistrarteAzul;
   
   public FrameLogin() {
 
@@ -30,7 +36,7 @@ public class FrameLogin extends JFrame implements MouseListener {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(null);
         this.setSize(500,700);
-        this.setResizable(false);
+        this.setResizable(true);
         this.setLocation(725, 175);
         this.setTitle("Itrio - LogIn");
         this.setIconImage(LogoItrioPq.getImage());
@@ -86,6 +92,16 @@ public class FrameLogin extends JFrame implements MouseListener {
         this.DownBoton.addMouseListener(this);
         this.DownBoton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
+          /// ------------ Registrarte ------------
+
+        this.Registrarte = new JLabel();
+        this.RegistrarteNegro = new ImageIcon("images/registro-negro.png");
+        this.RegistrarteAzul = new ImageIcon("images/registro-azul.png");
+        this.Registrarte.setIcon(RegistrarteNegro);
+        this.Registrarte.addMouseListener(this);
+        this.Registrarte.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        this.Registrarte.setBounds(85,450,315,29);
+          
         // ------------ Fondo Olas ------------
         JPanel BGO = new JPanel();
         BGO.setBounds(0,465,500,200);
@@ -98,6 +114,7 @@ public class FrameLogin extends JFrame implements MouseListener {
 
         // ------------ Add ------------
         this.add(Up);
+        this.add(Registrarte);
         this.add(Down);
         this.add(BGO);
 
@@ -117,9 +134,30 @@ public class FrameLogin extends JFrame implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
       if (e.getSource()==this.DownBoton){
+
+        String usuario = DownUsuarioTF.getText();
+        String passwd = DownContraseñaPF.getText();
+
+        if (usuario.isEmpty() || passwd.isEmpty()){
+          JOptionPane.showMessageDialog(this, "Usuario o contraseña vacios");
+        }
+        else {
+          if (Querys.login(usuario, passwd)){
+            this.dispose();
+            new ItrioBooks();
+          }
+          else {
+            JOptionPane.showMessageDialog(this,"El usuario o la contraseña no son validos...");
+            
+          }
+        }
+
+
         
+      }
+      if (e.getSource()==this.Registrarte) {
         this.dispose();
-        new ItrioBooks();
+        new FrameRegistro();
       }
     }
 
@@ -138,12 +176,22 @@ public class FrameLogin extends JFrame implements MouseListener {
         // No es necesario, pero para tener en cuenta de cara a futuro.
         this.repaint();
       }
+      if (e.getSource()==this.Registrarte){
+        this.Registrarte.setIcon(this.RegistrarteAzul);
+        // No es necesario, pero para tener en cuenta de cara a futuro.
+        this.repaint();
+      }
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
       if (e.getSource()==this.DownBoton){
         this.DownBoton.setIcon(this.DownBotonBG);
+        // No es necesario, pero para tener en cuenta de cara a futuro.
+        this.repaint();
+      }
+      if (e.getSource()==this.Registrarte){
+        this.Registrarte.setIcon(this.RegistrarteNegro);
         // No es necesario, pero para tener en cuenta de cara a futuro.
         this.repaint();
       }

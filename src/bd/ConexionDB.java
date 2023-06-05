@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 public class ConexionDB {
 
-    private static Connection conex = null;
+    protected static Connection conex = null;
 
     public ConexionDB(){
         this.connect();
@@ -38,14 +38,14 @@ public class ConexionDB {
           }
     }
 
-    // public static void main(String[] args) {
-        // ConexionDB con = new ConexionDB();
+    public static void main(String[] args) {
+        ConexionDB con = new ConexionDB();
         
-        // if (conex != null) {
-        //     System.out.println("Conectado correctamente");
-        // } else {
-        //     System.out.println("No se a podido conectar");
-        // }
-    // }
+        if (conex != null) {
+            System.out.println("Conectado correctamente");
+        } else {
+            System.out.println("No se a podido conectar");
+        }
+    }
        
 }

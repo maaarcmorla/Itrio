@@ -12,6 +12,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+import bd.ConexionDB;
+import bd.Querys;
+
 
 public class ItrioBooks extends JFrame implements MouseListener {
   
@@ -58,24 +61,6 @@ public class ItrioBooks extends JFrame implements MouseListener {
         this.LogoutBoton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         this.LogoutBoton.setBounds(50,30,50,50);
 
-        // ------------ Boton Usuario ------------
-        this.UsuarioBoton = new JLabel();
-        this.UsuarioBotonI = new ImageIcon("images/Icono-Usuario-Azul.png");
-        this.UsuarioBotonI2 = new ImageIcon("images/Icono-Usuario-Blanco.png");
-        this.UsuarioBoton.setIcon(UsuarioBotonI);
-        this.UsuarioBoton.addMouseListener(this);
-        this.UsuarioBoton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        this.UsuarioBoton.setBounds(1025,30,55,63);
-
-        // ------------ Boton Settings ------------
-        this.SettingsBoton = new JLabel();
-        this.SettingsBotonI = new ImageIcon("images/Icono-Settings-A.png");
-        this.SettingsBotonI2 = new ImageIcon("images/Icono-Settings-B.png");
-        this.SettingsBoton.setIcon(SettingsBotonI);
-        this.SettingsBoton.addMouseListener(this);
-        this.SettingsBoton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        this.SettingsBoton.setBounds(1100,26,55,63);
-
         // ------------ Panel - Scroll Pane ------------
         JPanel Libros = new JPanel();
         Libros.setPreferredSize(new Dimension(1100,590));
@@ -101,8 +86,6 @@ public class ItrioBooks extends JFrame implements MouseListener {
         // ------------ Add ------------
         this.add(scrollPane);
         this.add(LogoutBoton);
-        this.add(UsuarioBoton);
-        this.add(SettingsBoton);
         this.add(sobreItrio);
         this.add(Lprincipal);
        
@@ -137,32 +120,12 @@ public class ItrioBooks extends JFrame implements MouseListener {
         // No es necesario, pero para tener en cuenta de cara a futuro.
         this.repaint();
       }
-      if (e.getSource()==this.UsuarioBoton){
-        this.UsuarioBoton.setIcon(this.UsuarioBotonI2);
-        // No es necesario, pero para tener en cuenta de cara a futuro.
-        this.repaint();
-      }
-      if (e.getSource()==this.SettingsBoton){
-        this.SettingsBoton.setIcon(this.SettingsBotonI2);
-        // No es necesario, pero para tener en cuenta de cara a futuro.
-        this.repaint();
-      }
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
       if (e.getSource()==this.LogoutBoton){
         this.LogoutBoton.setIcon(this.LogoutBotonI);
-        // No es necesario, pero para tener en cuenta de cara a futuro.
-        this.repaint();
-      }
-      if (e.getSource()==this.UsuarioBoton){
-        this.UsuarioBoton.setIcon(this.UsuarioBotonI);
-        // No es necesario, pero para tener en cuenta de cara a futuro.
-        this.repaint();
-      }
-      if (e.getSource()==this.SettingsBoton){
-        this.SettingsBoton.setIcon(this.SettingsBotonI);
         // No es necesario, pero para tener en cuenta de cara a futuro.
         this.repaint();
       }

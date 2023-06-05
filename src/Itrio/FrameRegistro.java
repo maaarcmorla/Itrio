@@ -9,14 +9,21 @@ import java.awt.Cursor;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+
+import bd.Querys;
 
 public class FrameRegistro extends JFrame implements MouseListener {
     
     private JLabel RegisterBoton;
     private ImageIcon RegisterBotonI; 
     private ImageIcon RegisterBotonI2;
+    private JTextField NombreTF;
+    private JTextField ApellidoTF;
+    private JTextField UsuarioTF;
+    private JPasswordField ContraseñaPF;
 
     public FrameRegistro() {
 
@@ -27,7 +34,7 @@ public class FrameRegistro extends JFrame implements MouseListener {
         this.setLayout(null);
         this.setSize(600,700);
         this.setResizable(false);
-        this.setLocation(700, 100);
+        this.setLocation(660, 170);
         this.setTitle("Itrio - Registro");
         this.setIconImage(LogoItrioPq.getImage());
 
@@ -40,36 +47,36 @@ public class FrameRegistro extends JFrame implements MouseListener {
 
         // ------------ TextField-PasswordField ------------
         /// ------------ Nombre ------------
-        JTextField NombreTF = new JTextField();
-        NombreTF.setBounds(115,178,165,20);
-        NombreTF.setBackground(new Color(0, 0, 0,0));
-        NombreTF.setFont(new Font("Monstserrat",Font.BOLD,12));
-        NombreTF.setBorder(null);
-        NombreTF.setOpaque(false);
+        this.NombreTF = new JTextField();
+        this.NombreTF.setBounds(115,178,165,20);
+        this.NombreTF.setBackground(new Color(0, 0, 0,0));
+        this.NombreTF.setFont(new Font("Monstserrat",Font.BOLD,12));
+        this.NombreTF.setBorder(null);
+        this.NombreTF.setOpaque(false);
 
         /// ------------ Apellido ------------
-        JTextField ApellidoTF = new JTextField();
-        ApellidoTF.setBounds(300,178,165,20);
-        ApellidoTF.setBackground(new Color(0, 0, 0,0));
-        ApellidoTF.setFont(new Font("Monstserrat",Font.BOLD,12));
-        ApellidoTF.setBorder(null);
-        ApellidoTF.setOpaque(false);
+        this.ApellidoTF = new JTextField();
+        this.ApellidoTF.setBounds(300,178,165,20);
+        this.ApellidoTF.setBackground(new Color(0, 0, 0,0));
+        this.ApellidoTF.setFont(new Font("Monstserrat",Font.BOLD,12));
+        this.ApellidoTF.setBorder(null);
+        this.ApellidoTF.setOpaque(false);
 
         /// ------------ Nombre de Usuario ------------
-        JTextField UsuarioTF = new JTextField();
-        UsuarioTF.setBounds(142,268,300,20);
-        UsuarioTF.setBackground(new Color(0, 0, 0,0));
-        UsuarioTF.setFont(new Font("Monstserrat",Font.BOLD,12));
-        UsuarioTF.setBorder(null);
-        UsuarioTF.setOpaque(false);
+        this.UsuarioTF = new JTextField();
+        this.UsuarioTF.setBounds(142,268,300,20);
+        this.UsuarioTF.setBackground(new Color(0, 0, 0,0));
+        this.UsuarioTF.setFont(new Font("Monstserrat",Font.BOLD,12));
+        this.UsuarioTF.setBorder(null);
+        this.UsuarioTF.setOpaque(false);
 
         /// ------------ Contraseña ------------
-        JPasswordField ContraseñaPF = new JPasswordField();
-        ContraseñaPF.setBounds(142,337,300,20);
-        ContraseñaPF.setBackground(new Color(0, 0, 0,0));
-        ContraseñaPF.setFont(new Font("Monstserrat",Font.BOLD,12));
-        ContraseñaPF.setBorder(null);
-        ContraseñaPF.setOpaque(false); 
+        this.ContraseñaPF = new JPasswordField();
+        this.ContraseñaPF.setBounds(142,337,300,20);
+        this.ContraseñaPF.setBackground(new Color(0, 0, 0,0));
+        this.ContraseñaPF.setFont(new Font("Monstserrat",Font.BOLD,12));
+        this.ContraseñaPF.setBorder(null);
+        this.ContraseñaPF.setOpaque(false); 
 
         /// ------------ Boton ------------
         this.RegisterBoton = new JLabel();
@@ -94,8 +101,33 @@ public class FrameRegistro extends JFrame implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getSource()==this.RegisterBoton){
-            this.dispose();
-            new FrameLogin();
+
+            String nombre = NombreTF.getText();
+            String apellidos = ApellidoTF.getText();
+            String usuario = UsuarioTF.getText();
+            String passwd = ContraseñaPF.getText();
+
+            if (nombre.length()==0){
+                JOptionPane.showMessageDialog(this,"No puede dejar el nombre en blanco");
+              }
+              else if (apellidos.length()==0){
+                JOptionPane.showMessageDialog(this,"No puede dejar el apellido en blanco");
+              }
+              else if (usuario.length()==0){
+                JOptionPane.showMessageDialog(this,"No puede dejar el usuario en blanco");
+              }
+              else if (passwd.length()==0){
+                JOptionPane.showMessageDialog(this,"No puede dejar la contraseña en blanco");
+              }
+              else{
+                if (Querys.insert(nombre, apellidos, usuario, passwd)){
+                    JOptionPane.showMessageDialog(this, "Usuario creado correctamente!");
+                }
+
+                this.dispose();
+                new ItrioBooks();
+              }
+            
           }
     }
 
