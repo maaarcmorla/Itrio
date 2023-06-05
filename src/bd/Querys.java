@@ -1,8 +1,13 @@
 package bd;
 
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+
 
 public class Querys {
 
@@ -48,6 +53,20 @@ public class Querys {
 		return false;
 	}
     
+	public static ArrayList<Integer> books(){
+		ArrayList libros = new ArrayList<Integer>();
+		String query = "SELECT id FROM libros";
+		try {
+			Statement stm = ConexionDB.conex.createStatement();
+			ResultSet rs = stm.executeQuery(query);
 
+			while (rs.next()) {
+				libros.add(rs.getInt(1));
+			}
+		} catch (SQLException sqle) {
+			System.out.println("Error: " + sqle);
+		}
+		return libros;
+	}
 
 }
