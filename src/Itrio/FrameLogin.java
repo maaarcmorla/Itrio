@@ -36,7 +36,7 @@ public class FrameLogin extends JFrame implements MouseListener {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(null);
         this.setSize(500,700);
-        this.setResizable(true);
+        this.setResizable(false);
         this.setLocation(725, 175);
         this.setTitle("Itrio - LogIn");
         this.setIconImage(LogoItrioPq.getImage());
