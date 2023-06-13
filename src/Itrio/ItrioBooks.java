@@ -5,7 +5,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.Cursor;
 import java.awt.Dimension;
-import java.awt.Image;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -15,14 +14,14 @@ import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 
-import bd.Querys;
-
-
 public class ItrioBooks extends JFrame implements MouseListener {
   
   private JLabel LogoutBoton;
   private ImageIcon LogoutBotonI;
   private ImageIcon LogoutBotonI2;
+  private JLabel TablaCompleta;
+  private ImageIcon TablaCompletaBG;
+  private ImageIcon TablaCompletaBGI;
   private JLabel sobreItrio;
   private ImageIcon sobreItrio1;
   private JLabel Libro1;
@@ -39,18 +38,31 @@ public class ItrioBooks extends JFrame implements MouseListener {
   private JLabel Libro12;
   private JLabel Libro13;
   private JLabel Libro14;
-  private ImageIcon fondoCover;
+  private ImageIcon Nineteen;
+  private ImageIcon LaLuna;
+  private ImageIcon Visitante;
+  private ImageIcon FallInLove;
+  private ImageIcon ColdLake;
+  private ImageIcon Dragon;
+  private ImageIcon Road;
+  private ImageIcon Heart;
+  private ImageIcon DonQuijote;
+  private ImageIcon Insomnia;
+  private ImageIcon MobyDick;
+  private ImageIcon Momo;
+  private ImageIcon Gatos;
+  private ImageIcon AbuelaLoca;
 
   public ItrioBooks() {
 
-        ImageIcon LogoItrioPq = new ImageIcon("images/logo1.png");
+        ImageIcon LogoItrioPq = new ImageIcon("images/logo1.png");  // Logo barra de tareas
         
 
         // ------------ Frame ------------
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(null);
         this.setSize(1205,840);
-        this.setResizable(false);
+        this.setResizable(true);
         this.setLocation(350, 110);
         this.setTitle("Itrio");
         this.setIconImage(LogoItrioPq.getImage());
@@ -79,78 +91,75 @@ public class ItrioBooks extends JFrame implements MouseListener {
         Libro.setOpaque(true);
 
 
-        ImageIcon Nineteen = new ImageIcon("images/imagesSP/libros-foto.png");
+        this.Nineteen = new ImageIcon("images/imagesSP/libros-foto.png");
         this.Libro1 = new JLabel(Nineteen);
         this.Libro1.setBounds(30,30,200,300);
         this.Libro1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         
-        ImageIcon LaLuna = new ImageIcon("images/imagesSP/libros-foto-_10_.png");
+        this.LaLuna = new ImageIcon("images/imagesSP/libros-foto-_10_.png");
         this.Libro2 = new JLabel(LaLuna);
         this.Libro2.setBounds(245,30,200,300);
         this.Libro2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
-        ImageIcon Visitante = new ImageIcon("images/imagesSP/libros-foto-_2_.png");
+        this.Visitante = new ImageIcon("images/imagesSP/libros-foto-_2_.png");
         this.Libro3 = new JLabel(Visitante);
         this.Libro3.setBounds(460,30,200,300);
         this.Libro3.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
-        ImageIcon FallInLove = new ImageIcon("images/imagesSP/libros-foto-_3_.png");
+        this.FallInLove = new ImageIcon("images/imagesSP/libros-foto-_3_.png");
         this.Libro4 = new JLabel(FallInLove);
         this.Libro4.setBounds(675,30,200,300);
         this.Libro4.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         
-        ImageIcon ColdLake = new ImageIcon("images/imagesSP/libros-foto-_4_.png");
+        this.ColdLake = new ImageIcon("images/imagesSP/libros-foto-_4_.png");
         this.Libro5 = new JLabel(ColdLake);
         this.Libro5.setBounds(890,30,200,300);
         this.Libro5.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
-        ImageIcon Dragon = new ImageIcon("images/imagesSP/libros-foto-_5_.png");
+        this.Dragon = new ImageIcon("images/imagesSP/libros-foto-_5_.png");
         this.Libro6 = new JLabel(Dragon);
         this.Libro6.setBounds(30,350,200,300);
         this.Libro6.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
-        ImageIcon Road = new ImageIcon("images/imagesSP/libros-foto-_6_.png");
+        this.Road = new ImageIcon("images/imagesSP/libros-foto-_6_.png");
         this.Libro7 = new JLabel(Road);
         this.Libro7.setBounds(245,350,200,300);
         this.Libro7.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
-        ImageIcon Heart = new ImageIcon("images/imagesSP/libros-foto-_7_.png");
+        this.Heart = new ImageIcon("images/imagesSP/libros-foto-_7_.png");
         this.Libro8 = new JLabel(Heart);
         this.Libro8.setBounds(460,350,200,300);
         this.Libro8.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
-        ImageIcon DonQuijote = new ImageIcon("images/imagesSP/libros-foto-_8_.png");
+        this.DonQuijote = new ImageIcon("images/imagesSP/libros-foto-_8_.png");
         this.Libro9 = new JLabel(DonQuijote);
         this.Libro9.setBounds(675,350,200,300);
         this.Libro9.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
-        ImageIcon Insomnia = new ImageIcon("images/imagesSP/libros-foto-_9_.png");
+        this.Insomnia = new ImageIcon("images/imagesSP/libros-foto-_9_.png");
         this.Libro10 = new JLabel(Insomnia);
         this.Libro10.setBounds(890,350,200,300);
         this.Libro10.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
-        ImageIcon MobyDick = new ImageIcon("images/imagesSP/libros-foto-_1_.png");
+        this.MobyDick = new ImageIcon("images/imagesSP/libros-foto-_1_.png");
         this.Libro11 = new JLabel(MobyDick);
         this.Libro11.setBounds(675,665,200,300);
         this.Libro11.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
-        ImageIcon Momo = new ImageIcon("images/imagesSP/libros-foto-_11_.png");
+        this.Momo = new ImageIcon("images/imagesSP/libros-foto-_11_.png");
         this.Libro12 = new JLabel(Momo);
         this.Libro12.setBounds(30,670,200,300);
         this.Libro12.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
-        ImageIcon Gatos = new ImageIcon("images/imagesSP/libros-foto-_12_.png");
+        this.Gatos = new ImageIcon("images/imagesSP/libros-foto-_12_.png");
         this.Libro13 = new JLabel(Gatos);
         this.Libro13.setBounds(245,670,200,300);
         this.Libro13.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
-        ImageIcon AbuelaLoca = new ImageIcon("images/imagesSP/libros-foto-_13_.png");
+        this.AbuelaLoca = new ImageIcon("images/imagesSP/libros-foto-_13_.png");
         this.Libro14 = new JLabel(AbuelaLoca);
         this.Libro14.setBounds(460,670,200,300);
         this.Libro14.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-
-        this.fondoCover = new ImageIcon("images/imagesSP/fondoCover.gif"); 
-
 
         JScrollPane scrollPane = new JScrollPane(Libro, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
             JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -164,6 +173,15 @@ public class ItrioBooks extends JFrame implements MouseListener {
         scrollPane.setBorder(null);
         scrollPane.setOpaque(true);
 
+        // ------------ Boton Tabla Completa ------------
+        this.TablaCompleta = new JLabel();
+        this.TablaCompletaBG = new ImageIcon("images/tablaCompleta.png");
+        this.TablaCompletaBGI = new ImageIcon("images/tablaCompletaBG.png");
+        this.TablaCompleta.setIcon(TablaCompletaBG);
+        this.TablaCompleta.addMouseListener(this);
+        this.TablaCompleta.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        this.TablaCompleta.setBounds(495,739,200,30);
+
         // ------------ Boton Sobre Itrio ------------
         this.sobreItrio = new JLabel();
         this.sobreItrio1 = new ImageIcon("images/BP.bga.png");
@@ -172,7 +190,7 @@ public class ItrioBooks extends JFrame implements MouseListener {
         this.sobreItrio.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         this.sobreItrio.setBounds(-10,775,1205,30);
 
-        // ------------ Add ------------
+        // ------------ Add ------------        
         this.add(scrollPane);
 
         Libro.add(Libro1);
@@ -192,7 +210,9 @@ public class ItrioBooks extends JFrame implements MouseListener {
 
         this.add(LogoutBoton);
         this.add(sobreItrio);
+        this.add(TablaCompleta);
         this.add(Lprincipal);
+        
        
         this.setVisible(true);
 
@@ -203,6 +223,10 @@ public class ItrioBooks extends JFrame implements MouseListener {
       if (e.getSource()==this.LogoutBoton){
         this.dispose();
         new FrameLogin();
+      }
+      if (e.getSource()==this.TablaCompleta){
+        this.dispose();
+        new Libros();
       }
 
       if (e.getSource()==this.sobreItrio){
@@ -222,12 +246,11 @@ public class ItrioBooks extends JFrame implements MouseListener {
     public void mouseEntered(MouseEvent e) {
       if (e.getSource()==this.LogoutBoton){
         this.LogoutBoton.setIcon(this.LogoutBotonI2);
-        // No es necesario, pero para tener en cuenta de cara a futuro.
         this.repaint();
       }
-
-      if (e.getSource()==this.Libro1) { 
-        this.Libro1.setIcon(this.fondoCover);
+      if (e.getSource()==this.TablaCompleta){
+        this.TablaCompleta.setIcon(this.TablaCompletaBGI);
+        this.repaint();
       }
     }
 
@@ -235,7 +258,10 @@ public class ItrioBooks extends JFrame implements MouseListener {
     public void mouseExited(MouseEvent e) {
       if (e.getSource()==this.LogoutBoton){
         this.LogoutBoton.setIcon(this.LogoutBotonI);
-        // No es necesario, pero para tener en cuenta de cara a futuro.
+        this.repaint();
+      }
+      if (e.getSource()==this.TablaCompleta){
+        this.TablaCompleta.setIcon(this.TablaCompletaBG);
         this.repaint();
       }
     }

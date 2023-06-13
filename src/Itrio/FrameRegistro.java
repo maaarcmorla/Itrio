@@ -27,7 +27,7 @@ public class FrameRegistro extends JFrame implements MouseListener {
 
     public FrameRegistro() {
 
-        ImageIcon LogoItrioPq = new ImageIcon("images/logo1.png");
+        ImageIcon LogoItrioPq = new ImageIcon("images/logo1.png");  // Logo barra de tareas
 
         // ------------ Frame ------------
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -143,7 +143,6 @@ public class FrameRegistro extends JFrame implements MouseListener {
     public void mouseEntered(MouseEvent e) {
         if (e.getSource()==this.RegisterBoton){
             this.RegisterBoton.setIcon(this.RegisterBotonI2);
-            // No es necesario, pero para tener en cuenta de cara a futuro.
             this.repaint();
           }
     }
@@ -152,7 +151,6 @@ public class FrameRegistro extends JFrame implements MouseListener {
     public void mouseExited(MouseEvent e) {
         if (e.getSource()==this.RegisterBoton){
             this.RegisterBoton.setIcon(this.RegisterBotonI);
-            // No es necesario, pero para tener en cuenta de cara a futuro.
             this.repaint();
           }
     }

@@ -29,7 +29,7 @@ public class FrameLogin extends JFrame implements MouseListener {
   
   public FrameLogin() {
 
-        ImageIcon LogoItrioPq = new ImageIcon("images/logo1.png");
+        ImageIcon LogoItrioPq = new ImageIcon("images/logo1.png");  // Logo barra de tareas
         
 
         // ------------ Frame ------------
@@ -173,12 +173,10 @@ public class FrameLogin extends JFrame implements MouseListener {
     public void mouseEntered(MouseEvent e) {
       if (e.getSource()==this.DownBoton){
         this.DownBoton.setIcon(this.DownBotonBGI);
-        // No es necesario, pero para tener en cuenta de cara a futuro.
         this.repaint();
       }
       if (e.getSource()==this.Registrarte){
         this.Registrarte.setIcon(this.RegistrarteAzul);
-        // No es necesario, pero para tener en cuenta de cara a futuro.
         this.repaint();
       }
     }
@@ -187,12 +185,10 @@ public class FrameLogin extends JFrame implements MouseListener {
     public void mouseExited(MouseEvent e) {
       if (e.getSource()==this.DownBoton){
         this.DownBoton.setIcon(this.DownBotonBG);
-        // No es necesario, pero para tener en cuenta de cara a futuro.
         this.repaint();
       }
       if (e.getSource()==this.Registrarte){
         this.Registrarte.setIcon(this.RegistrarteNegro);
-        // No es necesario, pero para tener en cuenta de cara a futuro.
         this.repaint();
       }
     }
