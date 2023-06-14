@@ -6,6 +6,10 @@ import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+import bd.Querys;
 
 
 public class Libros extends JFrame implements MouseListener {
@@ -29,8 +33,25 @@ public class Libros extends JFrame implements MouseListener {
         JLabel LabelPrincipal = new JLabel();
         LabelPrincipal.setIcon(ImagePrincipal);
         LabelPrincipal.setBounds(0,0,1205,840);
-        
 
+        JTable Tabla = new JTable();
+        Tabla.setModel(new DefaultTableModel(
+            new Object [][] {
+                
+            },
+            new String [] {
+                "Id", "Titulo", "Autor", "Año", "Idioma"
+            }
+        ));
+        Tabla.setBounds(45,250,1100,500);
+
+
+        DefaultTableModel model=(DefaultTableModel) Tabla.getModel();
+
+ 
+
+        
+        this.add(Tabla);
         this.add(LabelPrincipal);
         this.setVisible(true);
     }

@@ -9,6 +9,9 @@
 ### ***Como surgio Itrio?***
 - Itrio surgio a base de un proyecto de una biblioteca que creamos en clase.
 
+### ***Porque elegí este nombre?***
+- Si bien poca gente sabe, el Itrio es un metal raro radiactivo. Y te preguntarás: ¿Qué tiene que ver un metal radiactivo con una biblioteca? - Absolutamente nada, simplemente el nombre me gustaba.
+
 ### ***Como esta creado Itrio?***
 - Itrio esta creado usando JAVA, pero tambien usamos MySQL para almacenar los datos de la biblioteca.
 
@@ -19,12 +22,12 @@
 
 Itrio esta compuesta por un login que junto a la base de datos valida que los usuarios registrados puedan iniciar sesion correctamente.
 
-![FrameLogin]()
+![FrameLogin](/readmeImages/1.png)
 
 Tambien tiene un register para crear usuarios.
 
-![FrameRegister]()
+![FrameRegister](/readmeImages/2.png)
 
 
 
-![ItrioBooks]()
+![ItrioBooks](/readmeImages/3.png)
